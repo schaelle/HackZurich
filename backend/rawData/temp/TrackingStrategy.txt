@@ -1,0 +1,34 @@
+Track are recorded on the devices and emitted every 2 minutes.
+
+In order to save data consumption, if the value has not changed, we do not send back a field when is recorded.
+
+    Strategy to record data in tracks at specific events
+    No sending back a field in a track if it has not changed
+
+
+    Idle in: MDI_GPS_PDOP, MDI_GPS_DIR, MDI_EXT_BATT_VOLTAGE, MDI_DTC_MIL, MDI_DTC_NUMBER, MDI_DTC_LIST, MDI_OBD_MILEAGE_METERS, MDI_OBD_FUEL, MDI_OBD_MILEAGE
+
+    Over speed:  MDI_GPS_PDOP, MDI_GSP_SPEED, MDI_GPS_DIR, MDI_OBD_SPEED, MDI_MAX_SPEED_IN_LAST_OVERSPEED, MDI_OVERSPEED
+
+    Over RPM (as a remember, over RPM is when RPM is above 3000 during more than 5 seconds): MDI_GPS_PDOP, MDI_GPS_SPEED, MDI_GPS_DIR, MDI_RPM_OVER, MDI_OBD_RPM, MDI_RPM_MAX, MDI_RPM_MIN, MDI_MAX_RPM_IN_LAST_OVER_RPM, MDI_RPM_AVERAGE
+
+    Idle out: MDI_GPS_PDOP, MDI_GPS_DIR, MDI_EXT_BATT_VOLTAGE, MDI_OBD_MILEAGE, MDI_DTC_MIL, MDI_DTC_NUMBER, MDI_OBD_MILEAGE_METERS, MDI_OBD_FUEL, MDI_DTC_LIST
+
+    Journey On/Off: MDI_GPS_PDOP, MDI_GPS_DIR, MDI_DIO_IGNITION, MDI_EXT_BATT_LOW, MDI_EXT_BATT_VOLTAGE, MDI_DTC_MIL, MDI_DTC_NUMBER, MDI_DTC_LIST,  MDI_OBD_MILEAGE_METERS, MDI_OBD_FUEL, MDI_OBD_VIN, MDI_OBD_MILEAGE, MDI_RPM_AVERAGE_RANGE_1, MDI_JOURNEY_TIME, MDI_IDLE_JOURNEY, MDI_DRIVING_JOURNEY, MDI_ODO_JOURNEY, MDI_JOURNEY_STATE, MDI_JOURNEY_ID, MDI_VEHICLE_STATE, MDI_OVERSPEED_COUNTER
+
+    Idling State ON/OFF (idling is when the ignition is ON and the vehicle is not moving during 5 minutes): MDI_GPS_PDOP, MDI_GPS_DIR, MDI_IDLE_STATE, MDI_VEHICLE_STATE
+
+    Heading Policy: MDI_OBD_SPEED, MDI_GPS_DIR
+
+    DriverBehaviour Pattern: "BEHAVE_ID", "BEHAVE_LONG", "BEHAVE_LAT", "BEHAVE_DAY_OF_YEAR", "BEHAVE_TIME_OF_DAY", "BEHAVE_GPS_SPEED_BEGIN", "BEHAVE_GPS_SPEED_PEAK", "BEHAVE_GPS_SPEED_END", "BEHAVE_GPS_HEADING_BEGIN", "BEHAVE_GPS_HEADING_PEAK", "BEHAVE_GPS_HEADING_END", "BEHAVE_ACC_X_BEGIN", "BEHAVE_ACC_X_PEAK", "BEHAVE_ACC_X_END", "BEHAVE_ACC_Y_BEGIN", "BEHAVE_ACC_Y_PEAK", "BEHAVE_ACC_Y_END", "BEHAVE_ACC_Z_BEGIN", "BEHAVE_ACC_Z_PEAK", "BEHAVE_ACC_Z_END", "BEHAVE_ELAPSED", "BEHAVE_UNIQUE_ID"
+
+    Evrey 5 seconds: MDI_GPS_PDOP, MDI_GPS_SPEED, MDI_GPS_DIR
+
+Some remarks:
+
+    Heading Policy will be trigger globally when the direction changes. To be more precise:
+
+                 - The vehicle drive more than 5km
+                 - The last reported data from policy is higher than 1 minute
+                 - The vehicle direction has changed more than 40°
+                 - The vehicle should have at least drive 250 meters for the direction changed to be taking into account. If the vehicle have drive less than 250 meters and the direction has changed more than 50°
