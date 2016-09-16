@@ -1,0 +1,22 @@
+diff a/frontend/angularfire-seed-master/app/index.html b/frontend/angularfire-seed-master/app/index.html	(rejected hunks)
+@@ -54,5 +54,20 @@
+   <script src="account/account.js"></script>
+   <script src="chat/chat.js"></script>
+   <script src="login/login.js"></script>
++
++
++  <script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
++  <script>
++    // Initialize Firebase
++    var config = {
++      apiKey: "AIzaSyA8Eoavf4aFGNYdNO7XqwnwF9hNvzmeCRw",
++      authDomain: "hackzurich-1ced0.firebaseapp.com",
++      databaseURL: "https://hackzurich-1ced0.firebaseio.com",
++      storageBucket: "hackzurich-1ced0.appspot.com",
++      messagingSenderId: "29004659486"
++    };
++    firebase.initializeApp(config);
++  </script>
++
+ </body>
+ </html>
