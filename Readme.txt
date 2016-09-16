@@ -28,15 +28,15 @@ Green-Rating (Aut Nutzung war notwendig, oder man hätte ÖV nehmen können oder zu
 2. GreenDrive
 
 2.0 Userstory
-Als User wünsche ich mir beim Einstieg in der APp ein einfaches, intuitives Menu, wo ich mit einfachen touch-Clicks auf die gewünschten Dashboards gelange.
+Als User wünsche ich mir beim Einstieg in der APp ein einfaches, intuitives Menu, wo ich mit einfachen touch-Clicks auf die gewünschten Dashboards gelange. Initial werden mir meine persönlichen Verbrauchsdaten der letzten Woche angezeigt.
 
 Acceptance Criterias
-	- Menu wird angezeigt (bspw. Burger)
-	- personifizierte Home-View mit persönlicher Auswertung (Verbrauch letzter Monat)
+	- Menu wird angezeigt, als Kacheln (mit Absprung auf die Dashboards)
+	- personifizierte Home-View mit persönlicher Auswertung (Verbrauch letzte Woche)
      
 
 2.1 Userstory
-Als User möchte ich wissen, wie mein Fussabdruck (Emissionen, Verbrauch Benzin) über eine längere Zeitspanne (Woche, Monat, Jahr) bezüglich Nutzung meines Autos aussieht, damit ich künftig umweltfreundlicher fahre. Ich wünsche mir für mein Userprofil eine graphische Auswertung über die angeforderte Zeitspanne (im Vergleich sehe ich die Vorperioden).
+Als User möchte ich wissen, wie mein Fussabdruck (Emissionen, Verbrauch Benzin) über eine längere Zeitspanne (Woche, Monat, Jahr) bezüglich Nutzung meines Autos aussieht, damit ich künftig umweltfreundlicher fahre. Ich wünsche mir für mein Userprofil eine graphische Auswertung über die angeforderte Zeitspanne (im Vergleich sehe ich die Vorperioden oder andere User).
 
 Acceptance Criterias
 	- Eigene Fussabdruck View (nur lesend)
