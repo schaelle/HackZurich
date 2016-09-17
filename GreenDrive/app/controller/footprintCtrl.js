@@ -1,6 +1,6 @@
 (function () {
     app.controller('FootprintController',
-    function ($scope) {
+    function ($scope, $state, $stateParams) {
 
 	$scope.footprintChart = {
 			options : {

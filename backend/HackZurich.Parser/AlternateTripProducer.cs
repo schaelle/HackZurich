@@ -18,12 +18,12 @@ namespace HackZurich.Parser
 			["walking"] = 0,
 		};
 
-		public async Task<IReadOnlyList<TripDetail>> ComputeAsync(GeographicPosition start, GeographicPosition stop)
+		public async Task<IReadOnlyList<TripDetail>> ComputeAsync(GeographicPosition start, GeographicPosition stop, string id)
 		{
-			return await Task.WhenAll(Co2Mode.Keys.Select(mode => LoadAsync(start, stop, mode)));
+			return await Task.WhenAll(Co2Mode.Keys.Select(mode => LoadAsync(id, start, stop, mode)));
 		}
 
-		private static async Task<TripDetail> LoadAsync(GeographicPosition start, GeographicPosition stop, string mode)
+		private static async Task<TripDetail> LoadAsync(string id, GeographicPosition start, GeographicPosition stop, string mode)
 		{
 			var client = new HttpClient();
 			var response = await client.GetAsync($"https://maps.googleapis.com/maps/api/directions/json?origin={start.Latitude} {start.Longitude}&destination={stop.Latitude} {stop.Longitude}&key={Key}&mode={mode}");
@@ -49,6 +49,7 @@ namespace HackZurich.Parser
 
 			return new TripDetail
 			{
+				Id = id,
 				Mode = mode,
 				Duration = min.Duration.Value,
 				Distance = min.Distance.Value,
@@ -58,6 +59,7 @@ namespace HackZurich.Parser
 
 		public class TripDetail
 		{
+			public string Id { get; set; }
 			public string Mode { get; set; }
 			public double Duration { get; set; }
 			public double Distance { get; set; }

@@ -7,6 +7,8 @@ using System.Net;
 using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
+using CsvHelper;
+using CsvHelper.Configuration;
 using FireSharp;
 using FireSharp.Config;
 using FireSharp.Interfaces;
@@ -91,6 +93,8 @@ namespace HackZurich.Parser
 
 			var upload = true;
 
+			var alt = new List<AlternateTripProducer.TripDetail>();
+
 			foreach (var userTrip in userTrips)
 			{
 				if (upload)
@@ -119,7 +123,8 @@ namespace HackZurich.Parser
 					//	_serializer.Serialize(stream, collection);
 					//}
 
-					var alternative = await new AlternateTripProducer().ComputeAsync(trip.StartPoint, trip.EndPoint);
+					var alternative = await new AlternateTripProducer().ComputeAsync(trip.StartPoint, trip.EndPoint, userTrip.Key + "_" + i);
+					alt.AddRange(alternative);
 
 					var points = new PointProducer().Compute(trip, alternative);
 
@@ -144,9 +149,25 @@ namespace HackZurich.Parser
 				await Task.WhenAll(uploadTasks);
 			}
 
+			var alternativePath = Path.Combine(path, "../alternative");
+			WriteRecords(alternativePath, alt);
+
 			//var values = await parser.ParseAsync(Path.Combine(path, Id));
 			Console.WriteLine("Completed");
 			Console.ReadLine();
+		}
+
+		private static void WriteRecords<TData>(string file, IEnumerable<TData> items)
+		{
+			using (var writer = new StreamWriter(new FileStream(file, FileMode.Create, FileAccess.Write)))
+			{
+				var csv = new CsvWriter(writer, new CsvConfiguration { Delimiter = "\t" });
+				csv.WriteHeader<TData>();
+				foreach (var item in items)
+				{
+					csv.WriteRecord(item);
+				}
+			}
 		}
 
 		private class TripData
