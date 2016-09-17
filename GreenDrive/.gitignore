@@ -1,5 +1,6 @@
 /.project
 /.settings/
+/bower_components/
 # Logs
 logs
 *.log
