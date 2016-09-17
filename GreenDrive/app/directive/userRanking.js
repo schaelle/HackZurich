@@ -7,7 +7,7 @@ app.directive('userRanking', function() {
             dialogFunction: "=",
             filterFunction: "="
         },
-        controller: function($scope, $rootScope, $firebaseObject, $firebaseArray) {
+        controller: function($scope, $firebaseObject, $firebaseArray) {
 
             var ref = firebase.database().ref();
 	    // download physicsmarie's profile data into a local object

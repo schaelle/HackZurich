@@ -3,7 +3,7 @@
 	$urlRouterProvider.otherwise("/");
 
 	$stateProvider.state('home', {
-		url : "/",
+		url : "/:userId",
 		templateUrl : "app/views/home.html",
 		controller : "HomeController"
 	}).state('ranking', {
