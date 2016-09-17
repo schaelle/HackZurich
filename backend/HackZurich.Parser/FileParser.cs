@@ -206,14 +206,6 @@ namespace HackZurich.Parser
 			}
 		}
 
-		private class TripData
-		{
-			public string DeviceId { get; set; }
-			public double Distance { get; set; }
-			public DateTime Start { get; set; }
-			public DateTime End { get; set; }
-			public double Fuel { get; set; }
-			public IEnumerable<double[]> Route { get; set; }
-		}
+		
 	}
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using GeoJSON.Net.Geometry;
 
 namespace HackZurich.Parser
 {
@@ -10,16 +11,19 @@ namespace HackZurich.Parser
 		{
 			Records = records.ToList();
 
-			var distanceRecords = Records.Where(i => i.Distance.HasValue).ToList();
+			var distanceRecords = Records.Where(i => i.Distance.HasValue).OrderBy(i => i.Time).ToList();
 			if (distanceRecords.Count > 0)
 			{
 				StartDistance = distanceRecords.Min(i => i.Distance.Value);
 				EndDistance = distanceRecords.Max(i => i.Distance.Value);
 				Distance = distanceRecords.Max(i => i.Distance.Value) - distanceRecords.Min(i => i.Distance.Value);
+
+				StartPoint = distanceRecords.First().Position;
+				EndPoint = distanceRecords.Last().Position;
 			}
 		}
 
-		
+
 		public DateTime Start => Records.Min(i => i.Time);
 		public DateTime End => Records.Max(i => i.Time);
 
@@ -30,5 +34,7 @@ namespace HackZurich.Parser
 		public double Fuel { get; set; }
 
 		public IReadOnlyList<TripDataRecord> Records { get; }
+		public GeographicPosition StartPoint { get; }
+		public GeographicPosition EndPoint { get; }
 	}
 }
