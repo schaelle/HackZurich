@@ -18,6 +18,13 @@ app.directive('userList', function() {
 	    		return userdata;	   
 	    	});
 
+            $scope.switchUser = function (item) {
+
+                $scope.currentUser = item;
+
+            };
+
+
         }
     }
 
