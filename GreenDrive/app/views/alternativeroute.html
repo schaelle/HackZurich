@@ -9,6 +9,7 @@
 						<td>Duration</td>
 						<td>Fuel consumption</td>
 						<td>Alternatives</td>
+						<td>Points</td>
 					</tr>
 				</thead>
 				<tbody>
@@ -27,7 +28,7 @@
 						<td class="vert-align">{{item.AvgSpeed | number:0}} km/h</td>
 						<td class="vert-align">{{item.Duration / 60 | number:0}} minutes</td>
 						<td class="vert-align">{{(item.GasConsumption / item.Distance) * 100 | number:2}} l/100km</td>
-						<td>
+						<td class="vert-align">
 							<ul ng-repeat="alt in item.Alternatives | orderBy:'Co2'">
 								<li>
 									<i ng-if="alt.Mode == 'walking'"  class="fa fa-male" aria-hidden="true"></i>
@@ -37,6 +38,9 @@
 									{{alt.Distance / 1000}} km
 								</li>
 							</ul>
+						</td>
+						<td class="vert-align">
+								{{ item.Points.CarVsTransit | number:2 }}
 						</td>
 					</tr>
 				</tbody>
