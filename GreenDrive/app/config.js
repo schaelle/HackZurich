@@ -10,6 +10,10 @@
 		url : "/ranking",
 		templateUrl : "app/views/ranking.html",
 		controller : "RankingController",
+	}).state('alternativeroute', {
+		url : "/alternativeroute",
+		templateUrl : "app/views/alternativeroute.html",
+		controller : "AlternativerouteController",
 	}).state('footprint', {
 		url : "/footprint",
 		templateUrl : "app/views/footprint.html",
