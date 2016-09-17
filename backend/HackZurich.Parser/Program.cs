@@ -72,9 +72,9 @@ namespace HackZurich.Parser
 			//}
 			var fieldPath = @"D:\Projects\HackZurich\backend\rawData\temp\field";
 			var fieldsNames = new FieldNameExtractor().Extract(result).ToArray();
-			fieldsNames = new[] { "GPS_SPEED", "ODO_FULL_METER", "MDI_OBD_RPM" };
+			fieldsNames = new[] { "GPS_SPEED", "ODO_FULL_METER", "MDI_OBD_RPM", "MDI_JOURNEY_TIME", "MDI_OBD_MILEAGE" };
 			var fieldValue = new FieldExtractor(fieldsNames).Extract(result).ToList();
-			fieldValue = MovingAverage(fieldValue);
+			//fieldValue = MovingAverage(fieldValue);
 
 			using (var stream = new StreamWriter(new FileStream(Path.Combine(fieldPath, new FileInfo(file).Name), FileMode.Create, FileAccess.Write)))
 			{
@@ -90,7 +90,7 @@ namespace HackZurich.Parser
 			return result;
 		}
 
-		private List<Tuple<DateTime, double[]>> MovingAverage(List<Tuple<DateTime, double[]>> fieldValue)
+		private static List<Tuple<DateTime, double[]>> MovingAverage(List<Tuple<DateTime, double[]>> fieldValue)
 		{
 			var res = new List<Tuple<DateTime, double[]>>();
 
@@ -99,7 +99,7 @@ namespace HackZurich.Parser
 			var latest = DateTime.MinValue;
 			var set = false;
 			var count = 0;
-			double[] values = new double[0];
+			var values = new double[0];
 
 			foreach (var tuple in fieldValue)
 			{
