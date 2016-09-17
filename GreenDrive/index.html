@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-    <title>Title</title>
+    <title>GreenDrive App</title>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=10" />
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, usser-scalable=no, width=device-width" />
@@ -19,10 +19,18 @@
 
 <body ng-app="GreenDriveApp" ng-cloak layout="column" flex>
 
-    <div ng-controller="NavigationController">
-        
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">GreenDrive</a>
+			</div>
+		</div>
+	</nav>
+
+	<div ng-controller="NavigationController">
+
     </div>
-<!-- build:js dest/output.js -->
+	<!-- build:js dest/output.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
@@ -41,7 +49,6 @@
     <!-- endbuild -->
 
     
-<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 <script>
   // Initialize Firebase
   var config = {
