@@ -4,7 +4,7 @@
 			<h2>
 				CO<sub>2</sub> Footprint
 			</h2>
-			<p>Current CO<sub>2</sub> emission: {{1 / emission | number: 2}} ton * </p>
+			<p>Current CO<sub>2</sub> emission: {{1 * (emission/100) | number: 2}} ton * </p>
 			<just-gage id="footprint" min=0 max="target" title="" value="emission"
 				options="{
             levelColors: ['#6db33f', '#DBFF19', '#FF6725', '#B20501'],
