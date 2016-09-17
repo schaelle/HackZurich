@@ -27,10 +27,11 @@ namespace HackZurich.Parser
 
 				res.Add(new TripDataRecord
 				{
+					DeviceId = record.Asset,
 					Time = record.RecorderdAt,
-					Position = new GeographicPosition(record.Location[1], record.Location[1]),
+					Position = new GeographicPosition(record.Location[1], record.Location[0]),
 					Speed = speed,
-					Fuel = fullValue,
+					Fuel = fullValue / 1000,
 					Distance = distanceValue / 1000
 				});
 			}
