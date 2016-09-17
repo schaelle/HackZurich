@@ -1,13 +1,13 @@
 (function () {
     app.controller("RankingController", 
-	    function ($scope, $firebaseObject) {
+	    function ($scope, $state, $stateParams, $firebaseArray) {
 	    	 var ref = firebase.database().ref();
-	    // download physicsmarie's profile data into a local object
-	    // all server changes are applied in realtime
-	    	$scope.userdata = $firebaseObject(ref.child('Users'));
+	    	$scope.userdata = $firebaseArray(ref.child('Users'));
 	    	$scope.userdata.$loaded().then(function(userdata){
 	    		return userdata;	   
 	    	});
+
+		   var test = $stateParams.userId;
 	    });
 
 

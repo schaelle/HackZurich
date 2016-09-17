@@ -1,6 +1,11 @@
 ﻿body {
 	padding-top: 50px;
-	font-family: 'Antic', sans-serif;
+	font-family: 'Antic', sans-serif !important;
+}
+
+.angular-google-map-container { 
+  height: 100px;
+  width: 150px; 
 }
 
 a {
@@ -16,6 +21,12 @@ a {
 	font-size: 20px;
 }
 
+.table tbody>tr>td.vert-align{
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
+
 .rankingtable > .panel-heading{
 	font-size: 22px;
 }
@@ -26,6 +37,9 @@ a {
 /*******************/
 .col-no-padding{
 	padding: 0px;
+}
+tspan{
+	color: white !important;
 }
 .hpanel{
 	padding: 15px;
@@ -47,7 +61,7 @@ a {
     background: #6D929B;
 }
 .hpanel_third {
-    background: #2078B4;
+    background: #456789;
 }
 .hpanel_second:hover, .hpanel_first:hover, .hpanel_third:hover {
 	background-color: #6D92CB;

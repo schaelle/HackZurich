@@ -13,7 +13,8 @@
     "font-awesome": "fontawesome#^4.6.3",
     "highcharts-ng": "^0.0.12",
     "highcharts": "highcharts-release#^4.2.6",
-    "angular-justgage": "^1.0.1"
+    "angular-justgage": "^1.0.1",
+    "angular-google-maps": "^2.3.4"
   },
   "overrides": {
     "bootstrap": {

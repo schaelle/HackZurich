@@ -2,18 +2,11 @@
 	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 				
 		<div class="panel panel-default rankingtable">
-		  <!-- Default panel contents -->
-		  <div class="panel-heading"> 
-			  <div ><i class="fa fa-trophy fa-5x"
-							aria-hidden="true"></i></div></div>
-		  
-		
-
 		  <!-- Table -->
 		  <table class="table">
 		  <thead>
 		  	<tr>
-		  		<td>
+		  		<td align="center">
 		  			Rank
 		  		</td>
 		  		<td>
@@ -25,11 +18,13 @@
 		  	</tr>
 		  </thead>
 		  <tbody>
-			    <tr ng-repeat="item in userdata">
-			    	<td>
-			    	 {{item.Ranking.Rank}}
+			    <tr ng-repeat="item in userdata | orderBy:['Ranking.Rank']">
+			    	<td align="center">
+			    	 # {{item.Ranking.Rank}}
 					 </td>
 			    	<td>
+			    		<img src="https://api.adorable.io/avatars/34/{{item.Prename}}" class="img-circle xs-b" alt="logo">
+			    		
 						{{item.Name}} {{item.Prename}}
 			    	</td>
 					<td>
