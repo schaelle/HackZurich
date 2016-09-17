@@ -13,7 +13,7 @@
 				</thead>
 				<tbody>
 					<tr ng-repeat="item in trips">
-						<td align="center" width="200" >
+						<td align="center" width="200">
 							<ng-map zoom="7" center="{{item.Center}}" map-type-id="TERRAIN">
 						    <shape name="polyline"
 						      path="{{item.Route}}"
