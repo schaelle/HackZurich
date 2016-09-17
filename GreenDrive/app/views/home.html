@@ -1,52 +1,43 @@
 <div class="row">
-	<div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6 col-no-padding">
-		<div class="hpanel hpanel_first">
-			<div class="panel-body">
-				<div class="text-center">
-					<h2 class="m-b-xs">CO<sub>2</sub> Footprint</h2>
-					<div class="m">
-						<just-gage id="footprint" min=0 max="target" title=""
-							value="emission"
-							options="{
-            levelColors: ['#00FF00', '#66ff00', '#FFFF00', '#FF0000'],
+	<div class="col-md-6 col-no-padding">
+		<div class="box">
+			<h2>
+				CO<sub>2</sub> Footprint
+			</h2>
+			<just-gage id="footprint" min=0 max="target" title="" value="emission"
+				options="{
+            levelColors: ['#6db33f', '#DBFF19', '#FF6725', '#B20501'],
             levelGradiant: false,
             titleFontColor: 'white',
             titleFontFamily: 'Antic'}"></just-gage>
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
-	<div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6 col-no-padding">
-		<div class="hpanel hpanel_second">
+	<div class="col-md-6 col-no-padding">
+		<div class="text-center">
 			<a ui-sref="ranking({userId:userId})">
-				<div class="panel-body">
-					<div class="text-center">
-						<h2 class="m-b-xs">Rankings</h2>
-						<div class="m">
-							<i class="fa fa-trophy fa-5x home_icon" aria-hidden="true"></i>
-							<user-ranking></user-ranking>
-						</div>
-					</div>
-				</div>
+				<h2>Rankings</h2> 
+				<i class="fa fa-trophy fa-5x home_icon" aria-hidden="true"></i> 
+				<user-ranking></user-ranking>
 			</a>
 		</div>
 	</div>
 </div>
+
 <div class="row">
-	<div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6 col-no-padding">
-		<div class="hpanel hpanel_third">
+	<div class="col-md-6 col-no-padding">
+		<div class="box">
 			<a ui-sref="alternativeroute({userId:userId})">
-				<div class="panel-body">
-					<div class="text-center">
-						<h2 class="m-b-xs">Alternative</h2>
-						<div class="m">
-							<i class="fa fa-map-o fa-5x home_icon" aria-hidden="true"></i>
-						</div>
-					</div>
-				</div>
+				<h2>Alternative</h2> 
+				<i class="fa fa-map-o fa-5x home_icon" aria-hidden="true"></i>
 			</a>
 		</div>
 	</div>
-
+	<div class="col-md-6 col-no-padding">
+		<div class="box">
+			<a ui-sref="ranking({userId:userId})">
+				<h2>Manual</h2>
+				<i class="fa fa-book fa-5x home_icon" aria-hidden="true"></i>
+			</a>
+		</div>
+	</div>
 </div>

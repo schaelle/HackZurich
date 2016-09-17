@@ -4,17 +4,17 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<td align="center">Route</td>
-						<td>Average Speed</td>
-						<td>Duration</td>
-						<td>Fuel consumption</td>
-						<td>Alternatives</td>
-						<td>Points</td>
+						<th align="center">Route</th>
+						<th>Average Speed</th>
+						<th>Duration</th>
+						<th>Fuel consumption</th>
+						<th>Alternatives</th>
+						<th>Points</th>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="item in trips">
-						<td align="center" width="300" height="150">
+						<td align="center" width="200">
 							<ng-map zoom="7" center="{{item.Center}}" map-type-id="TERRAIN">
 						    <shape name="polyline"
 						      path="{{item.Route}}"
