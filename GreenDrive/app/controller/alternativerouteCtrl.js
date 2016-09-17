@@ -1,5 +1,5 @@
 (function () {
-    app.controller("AlternativerouteController", 
+    app.controller("AlternativerouteController",
 	    function ($scope, $firebaseObject, uiGmapGoogleMapApi) {
 			var ref = firebase.database().ref();
 			var logbox = $firebaseObject(ref.child('LogBox'));
@@ -13,9 +13,10 @@
 	    			}
 	    		});
 			});
+
+      $scope.trackings = [];
+
 	    	$scope.trips = trips;
-	    	
-	    	
 	    	 // Define variables for our Map object
 	    	  var areaLat      = 44.2126995,
 	    	      areaLng      = -100.2471641,
@@ -25,6 +26,6 @@
 	    		    $scope.map     = { center: { latitude: areaLat, longitude: areaLng }, zoom: areaZoom };
 	    		    $scope.options = { scrollwheel: false };
 	    		  });
-	    	  
+
 	    });
 })();

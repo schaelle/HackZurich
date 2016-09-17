@@ -15,7 +15,7 @@
 					<tr ng-repeat="item in trips">
 						<td align="center">
 							<ui-gmap-google-map center='map.center' zoom='map.zoom'>
-								 <ui-gmap-polylines models="trackings" path="'geotracks'" static="true"></ui-gmap-polylines>
+								 <ui-gmap-polyline ng-repeaat="line in trackings" models="line" static="true"></ui-gmap-polylines>
 							</ui-gmap-google-map>
 						</td>
 						<td class="vert-align">{{item.AvgSpeed | number:0}} km/h</td>
