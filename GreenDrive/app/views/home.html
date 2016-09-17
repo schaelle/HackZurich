@@ -1,31 +1,31 @@
 <div class="row">
 	<div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6 col-no-padding">
 		<div class="hpanel hpanel_first">
-		<a href="#/footprint">
 			<div class="panel-body">
 				<div class="text-center">
 					<h2 class="m-b-xs">My Footprint</h2>
 					<div class="m">
-					<i class="fa fa-globe fa-5x home_icon"
-								aria-hidden="true"></i>
-					 <!--   <highchart id="myFootprint" config="footprintChart"></highchart> -->
+						<just-gage id="footprint" min=0 max="target" title=""
+							value="emission"
+							options="{
+            levelColors: ['#00FF00', '#66ff00', '#FFFF00', '#FF0000'],
+            levelGradiant: false
+        }"></just-gage>
 					</div>
 				</div>
 			</div>
-		</a>
 		</div>
 	</div>
 	<div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6 col-no-padding">
 		<div class="hpanel hpanel_second">
 			<a href="#/ranking">
 				<div class="panel-body">
-					<div class="text-center">				
+					<div class="text-center">
 						<h2 class="m-b-xs">Rankings</h2>
 						<div class="m">
-							 <i class="fa fa-trophy fa-5x home_icon"
-								aria-hidden="true"></i>
+							<i class="fa fa-trophy fa-5x home_icon" aria-hidden="true"></i>
 						</div>
-					
+
 					</div>
 
 				</div>
@@ -35,21 +35,20 @@
 </div>
 <div class="row">
 	<div class=" col-lg-6 col-md-6 col-sm-6 col-xs-6 col-no-padding">
-		<div class="hpanel hpanel_third">
-		<a href="#/alternativeroute">
-			<div class="panel-body">
-				<div class="text-center">
-					<h2 class="m-b-xs">Alternative</h2>
-					<div class="m">
-						<i class="fa fa-map-o fa-5x home_icon"
-								aria-hidden="true"></i>
+		<div class="hpanel hpanel_first">
+			<a href="#/alternativeroute">
+				<div class="panel-body">
+					<div class="text-center">
+						<h2 class="m-b-xs">Alternative</h2>
+						<div class="m">
+							<i class="fa fa-map-o fa-5x home_icon" aria-hidden="true"></i>
+						</div>
 					</div>
 				</div>
-			</div>
-		  </a>
+			</a>
 		</div>
 	</div>
-	
+
 </div>
 
 <div ui-view></div>

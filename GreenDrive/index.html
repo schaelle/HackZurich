@@ -22,19 +22,20 @@
 </head>
 
 <body ng-app="GreenDriveApp" ng-cloak layout="column" flex>
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#/home">GreenDrive</a>
-			</div>
-		</div>
-	</nav>
+<nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/home">GreenDrive</a>
+            <user-list></user-list>
+        </div>
+
+    </div>
+</nav>
 	
 	<div class="container col-no-padding">
     	<div ui-view></div>
 	</div>
 	
-	<script src="http://code.highcharts.com/highcharts.src.js"></script>
 	<!-- build:js dest/output.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -44,8 +45,13 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/highcharts-ng/dist/highcharts-ng.js"></script>
+    <script src="bower_components/highcharts/highcharts.js"></script>
+    <script src="bower_components/highcharts/highcharts-more.js"></script>
+    <script src="bower_components/highcharts/modules/exporting.js"></script>
+    <script src="bower_components/raphael/raphael.js"></script>
+    <script src="bower_components/justgage-toorshia/justgage.js"></script>
+    <script src="bower_components/angular-justgage/ng-justgage.js"></script>
     <!-- endbower -->
-<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
 
     <script src="app/app.js"></script>
     <script src="app/config.js"></script>
@@ -53,6 +59,7 @@
     <script src="app/controller/rankingCtrl.js"></script>
     <script src="app/controller/footprintCtrl.js"></script>
     <script src="app/controller/alternativerouteCtrl.js"></script>
+    <script src="app/directive/userList.js"
 
 
     <script src="//localhost:35729/livereload.js"></script>
