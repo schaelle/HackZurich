@@ -95,6 +95,11 @@ a {
 .rankingtable{
 	margin: 50px;
 }
+
+.table thead th {
+	background-color: #f1f1f1;
+}
+
 .table > thead > tr > td {
 	padding-left: 15px;
 	padding-right: 15px;
