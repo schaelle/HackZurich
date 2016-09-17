@@ -9,7 +9,6 @@
     		var distance = 0;
     		var mileage = 0;
     		var emission_kg = 0;
-    		var i = 0;
     		
     		// formula: https://www.spritmonitor.de/de/berechnung_co2_ausstoss.html
     		var co2_petrol_kg_l = 2.33; 
@@ -43,8 +42,8 @@
     			
     			for(var key in car.Data){
     				var record = car.Data[key];
-    				console.log('Distance per event: ' + record.Distance);
-    				console.log('Fuel consumption per event: ' + record.Distance + ' liter');
+    				console.log('Distance per event: ' + record.Distance + ' in km');
+    				console.log('Fuel consumption per event: ' + record.Distance + ' in l');
     				distance += record.Distance;
     				mileage += record.GasConsumption;
     			}
@@ -53,9 +52,9 @@
     			
     		});
     		
-    		console.log("Total Distance: " + distance);
-    		console.log('Fuel consumption: '+ mileage);
-    		console.log('CO2 amount: '+ emission_kg / 1000 + ' t');
+    		console.log("Total Distance: " + distance + ' in km');
+    		console.log('Fuel consumption: '+ mileage + "  in l") ;
+    		console.log('CO2 amount: '+ emission_kg / 1000 + 'in t');
 
     		$scope.footprintChart = {
     				options : {
