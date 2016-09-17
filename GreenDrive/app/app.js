@@ -2,6 +2,7 @@
     ['ui.router',
     'firebase',
     'highcharts-ng', 
-    'ngJustGage'
+    'ngJustGage', 
+    'uiGmapgoogle-maps'
     ]);
 

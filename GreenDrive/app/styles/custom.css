@@ -3,6 +3,11 @@
 	font-family: 'Antic', sans-serif !important;
 }
 
+.angular-google-map-container { 
+  height: 100px;
+  width: 100px; 
+}
+
 a {
 	text-decoration: none !important;
 }

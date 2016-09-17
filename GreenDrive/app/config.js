@@ -26,3 +26,12 @@
  * 
  * localStorageProvider .setStorageCookie(0, '/'); });
  */
+
+
+app.config(function(uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+        key: 'AIzaSyA8Eoavf4aFGNYdNO7XqwnwF9hNvzmeCRw',
+        v: '3.24', //defaults to latest 3.X anyhow
+        libraries: 'weather,geometry,visualization'
+    });
+})

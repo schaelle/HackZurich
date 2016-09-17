@@ -7,13 +7,19 @@
 						<td align="center">Route</td>
 						<td>Average Speed (Km per hour)</td>
 						<td>Duration (Minutes)</td>
+						<td>Fuel consumption (in liters per 100 km)</td>
 					</tr>
 				</thead>
 				<tbody>
 					<tr ng-repeat="item in trips">
-						<td align="center">[{{$index + 1}}]</td>
+						<td align="center">
+							<ui-gmap-google-map center='map.center' zoom='map.zoom'>
+								 <ui-gmap-polylines models="trackings" path="'geotracks'" static="true"></ui-gmap-polylines>
+							</ui-gmap-google-map>
+						</td>
 						<td>{{item.AvgSpeed | number:0}}</td>
 						<td>{{item.Duration / 60 | number:0}}</td>
+						<td>{{(item.GasConsumption / item.Distance) * 100 | number:2}}</td>
 					</tr>
 				</tbody>
 			</table>
