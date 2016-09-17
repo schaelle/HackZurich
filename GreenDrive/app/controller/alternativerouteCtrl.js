@@ -1,14 +1,18 @@
 (function () {
     app.controller("AlternativerouteController", 
 	    function ($scope, $firebaseObject) {
-	    	 var ref = firebase.database().ref();
-	    // download physicsmarie's profile data into a local object
-	    // all server changes are applied in realtime
-	    	$scope.userdata = $firebaseObject(ref.child('Users'));
-	    	$scope.userdata.$loaded().then(function(userdata){
-	    		return userdata;	   
-	    	});
+			var ref = firebase.database().ref();
+			var logbox = $firebaseObject(ref.child('LogBox'));
+			var trips = [];
+	    	logbox.$loaded().then(function(data){
+	    		data.forEach(function(car) {
+	    			if(car )
+	    			for(var key in car.Data){
+	    				var record = car.Data[key];
+	    				trips.push(record);
+	    			}
+	    		});
+			});
+	    	$scope.trips = trips;
 	    });
-
-
 })();

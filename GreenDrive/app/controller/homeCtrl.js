@@ -3,8 +3,8 @@
 
 		 // get the reference
 		var ref = firebase.database().ref();
-    	$scope.data = $firebaseObject(ref.child('LogBox'));
-    	$scope.data.$loaded().then(function(data){
+    	var logbox = $firebaseObject(ref.child('LogBox'));
+    	logbox.$loaded().then(function(data){
 
     		var distance = 0;
     		var mileage = 0;
