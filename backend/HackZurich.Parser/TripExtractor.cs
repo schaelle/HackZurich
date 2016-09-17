@@ -5,7 +5,7 @@ namespace HackZurich.Parser
 {
 	public class TripExtractor : IExtractor<TripDataRecord, TripRecord>
 	{
-		private static readonly TimeSpan Deadtime = TimeSpan.FromMinutes(2);
+		private static readonly TimeSpan Deadtime = TimeSpan.FromMinutes(5);
 
 		public IReadOnlyList<TripRecord> Extract(IEnumerable<TripDataRecord> records)
 		{

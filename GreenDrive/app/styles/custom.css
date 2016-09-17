@@ -1,6 +1,8 @@
 ﻿body {
 	padding-top: 50px;
+	font-family: 'Antic', sans-serif;
 }
+
 a {
 	text-decoration: none !important;
 }
@@ -44,7 +46,10 @@ a {
 .hpanel_second {
     background: #6D929B;
 }
-.hpanel_second:hover, .hpanel_first:hover {
+.hpanel_third {
+    background: #2078B4;
+}
+.hpanel_second:hover, .hpanel_first:hover, .hpanel_third:hover {
 	background-color: #6D92CB;
 }
 
@@ -52,5 +57,8 @@ a {
 	color: #c9df8a;
 }
 .hpanel_first:hover h2,  .hpanel_first:hover .home_icon {
+	color: #c9df8a;
+}
+.hpanel_third:hover h2,  .hpanel_third:hover .home_icon {
 	color: #c9df8a;
 }
