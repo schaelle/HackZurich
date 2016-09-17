@@ -101,6 +101,7 @@ namespace HackZurich.Parser
 					await client.DeleteAsync($"LogBox/{userTrip.Key}/Data");
 
 				var uploadTasks = new List<Task>();
+				var userPoints = new List<double>();
 				for (int i = 0; i < userTrip.Value.Count; i++)
 				{
 					var trip = userTrip.Value[i];
@@ -127,6 +128,8 @@ namespace HackZurich.Parser
 					alt.AddRange(alternative);
 
 					var points = new PointProducer().Compute(trip, alternative);
+					if (points.CarVsTransit.HasValue)
+						userPoints.Add(points.CarVsTransit.Value);
 
 					var tripData = new TripData
 					{
@@ -147,6 +150,8 @@ namespace HackZurich.Parser
 						uploadTasks.Add(client.SetAsync($"LogBox/{userTrip.Key}/Data/{i}", tripData));
 				}
 				await Task.WhenAll(uploadTasks);
+
+				client.SetAsync($"LogBox/{userTrip.Key}/Points", userPoints.Average(i => i));
 			}
 
 			var alternativePath = Path.Combine(path, "../alternative");

@@ -59,8 +59,8 @@ module.exports = function (grunt) {
         },
         uglify: {
             options: {
-                compress: true,
-                mangle: true
+                compress: false,
+                mangle: false
             },
             app: {
                 files: {
@@ -68,7 +68,6 @@ module.exports = function (grunt) {
                 }
             }
         },
-
         wiredep: {
             task: {
                 // Point to the files that should be updated when
@@ -113,13 +112,19 @@ module.exports = function (grunt) {
         copy: {
             firebase: {
                 files: [
-					{ expand: true, src: ['dest/output*', 'dest/config.js', 'views/*', 'app/**/*.html', 'assets/*', 'favicon.ico'], dest: 'public/', filter: 'isFile' }
+					          { expand: true, src: ['dest/output*', 'dest/config.js', 'views/*', 'app/**/*.html', 'assets/*', 'favicon.ico'], dest: 'public/', filter: 'isFile' },
+                    { expand: true, cwd:'bower_components/font-awesome/fonts', src: ['**/*'], dest: 'public/fonts/', filter: 'isFile' }
                 ]
+            },
+            uglify:{
+              files: [
+                  { expand: true, src: ['dest/output*', 'dest/config.js', 'views/*', 'app/**/*.html', 'assets/*', 'favicon.ico'], dest: 'public/', filter: 'isFile' }
+              ]
             }
         },
         cssmin: {
             minify: {
-                files: { 'dest/output.css': [require('wiredep')().css, 'styles/**/*.css'] }
+                files: { 'dest/output.css': [require('wiredep')().css, 'app/styles/**/*.css'] }
             }
         },
         usemin: {
@@ -156,6 +161,10 @@ module.exports = function (grunt) {
             js: {
                 src: ['app/app.js', 'app/**/*.js'],
                 dest: 'dest/app.js'
+            },
+            uglify:{
+               src: [require('wiredep')().js, 'dest/app.js'],
+               dest:'dest/output.js'
             }
         },
         ngAnnotate: {
@@ -242,7 +251,7 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-processhtml');
 
     grunt.registerTask('default', ['wiredep']);
-    grunt.registerTask('dist', ['wiredep', 'concat:js', 'ngAnnotate:dist', 'uglify:app', 'cssmin:minify', 'clean:firebase', 'firebase-config', 'copy:firebase', 'processhtml:dist', 'usemin', 'cachebreaker:dist']);
+    grunt.registerTask('dist', ['wiredep', 'concat:js', 'ngAnnotate:dist', 'concat:uglify', 'cssmin:minify', 'clean:firebase', 'firebase-config', 'copy:firebase', 'processhtml:dist', 'usemin', 'cachebreaker:dist']);
     grunt.registerTask('upload', ['prompt:environment', 'dist', 'firebase-deploy:dev']);
     grunt.registerTask('upload-build', ['dist', 'firebase-deploy:dev']);
     grunt.registerTask('upload-build-pd', ['dist', 'firebase-deploy:pd']);
