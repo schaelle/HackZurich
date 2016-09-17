@@ -5,7 +5,7 @@
 
 .angular-google-map-container { 
   height: 100px;
-  width: 100px; 
+  width: 150px; 
 }
 
 a {
@@ -20,6 +20,12 @@ a {
 	font-weight; bold;
 	font-size: 20px;
 }
+
+.table tbody>tr>td.vert-align{
+    vertical-align: middle !important;
+    text-align: center !important;
+}
+
 
 .rankingtable > .panel-heading{
 	font-size: 22px;
