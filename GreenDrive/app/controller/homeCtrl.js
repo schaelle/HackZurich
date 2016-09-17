@@ -42,8 +42,8 @@
     			
     			for(var key in car.Data){
     				var record = car.Data[key];
-    				console.log('Distance per event: ' + record.Distance + ' in km');
-    				console.log('Fuel consumption per event: ' + record.Distance + ' in l');
+    				//console.log('Distance per event: ' + record.Distance + ' in km');
+    				//console.log('Fuel consumption per event: ' + record.Distance + ' in l');
     				distance += record.Distance;
     				mileage += record.GasConsumption;
     			}
@@ -56,20 +56,10 @@
     		console.log('Fuel consumption: '+ mileage + "  in l") ;
     		console.log('CO2 amount: '+ emission_kg / 1000 + 'in t');
 
-    		$scope.footprintChart = {
-    				options : {
-    					chart : {
-    						type : 'pie'
-    					}
-    				},
-    				series : [ {
-    					data : [ 10, 15, 12, 8, 7 ]
-    				} ],
-    				title : {
-    					text : ''
-    				},
-    				loading : true
-    			}  
+            // Test data
+            $scope.emission = (emission_kg / 1000) * 100;
+            $scope.target = 100;
+
     	});
 	});
 
