@@ -19,47 +19,16 @@
 </head>
 
 <body ng-app="GreenDriveApp" ng-cloak layout="column" flex>
+<div ng-controller="NavigationController">
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">GreenDrive</a>
+            </div>
+        </div>
+    </nav>
 
-	<nav class="navbar navbar-default navbar-fixed-top">
-		<div class="container">
-			<div class="navbar-header">
-				<a class="navbar-brand" href="#">GreenDrive</a>
-			</div>
-		</div>
-	</nav>
-
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6">
-				<div class="hpanel">
-					<div class="panel-body">
-						<div class="text-center">
-							<h2 class="m-b-xs">My Footprint</h2>
-							<div class="m">
-								<i class="fa fa-tachometer fa-5" aria-hidden="true"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="col-md-6">
-				<div class="hpanel">
-					<div class="panel-body">
-						<div class="text-center">
-							<h2 class="m-b-xs">Rankings</h2>
-							<div class="m">
-								<i class="fa fa-trophy fa-5" aria-hidden="true"></i>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div ng-controller="NavigationController">
-
-    </div>
+</div>
 	<!-- build:js dest/output.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
