@@ -10,6 +10,10 @@
 		url : "/ranking",
 		templateUrl : "app/views/ranking.html",
 		controller : "RankingController",
+	}).state('footprint', {
+		url : "/footprint",
+		templateUrl : "app/views/footprint.html",
+		controller : "FootprintController",
 	});
 });
 
