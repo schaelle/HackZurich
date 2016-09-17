@@ -7,7 +7,15 @@
 	    		return userdata;	   
 	    	});
 
-		   var test = $stateParams.userId;
+			var ref = firebase.database().ref('Users' + '/' + $stateParams.userId);
+        // download physicsmarie's profile data into a local object
+        // all server changes are applied in realtime
+        $scope.currentUser = $firebaseArray(ref);
+        $scope.currentUser.$loaded().then(function (currentUser) {
+            return currentUser;
+
+        });
+
 	    });
 
 
