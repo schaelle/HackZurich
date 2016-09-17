@@ -181,6 +181,6 @@ tspan{
 }
 
 
-.box {
+.box { text-align: center; position: relative; }
 
-}
+.box > .icon { position: relative; z-index: 2; margin: auto; width: 88px; height: 88px; border: 8px solid white; line-height: 88px; border-radius: 50%; background: #63B76C; vertical-align: middle; }
