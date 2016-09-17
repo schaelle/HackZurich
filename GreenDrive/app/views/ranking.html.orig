@@ -22,10 +22,19 @@
 		  	</tr>
 		  </thead>
 		  <tbody>
+<<<<<<< .merge_file_kG4MdG
+			    <tr ng-repeat="dt in data.LogBox">
+			    	<td>
+			    		{{dt.Name}}
+			    	</td>
+			    	<td>
+			    	</td>
+=======
 			    <tr ng-repeat="item in userdata">
 			    	<td>
 			    	 {{item.Ranking.Rank}}
 					 </td>
+>>>>>>> .merge_file_N8kMDd
 			    	<td>
 						{{item.Name}} {{item.Prename}}
 			    	</td>

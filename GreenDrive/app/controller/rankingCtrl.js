@@ -4,11 +4,9 @@
 	    	 var ref = firebase.database().ref();
 	    // download physicsmarie's profile data into a local object
 	    // all server changes are applied in realtime
-	    	//$scope.profile = $firebaseObject(ref.child('profiles').child('physicsmarie'));
-	    	$scope.data = $firebaseObject(ref);
-	    	$scope.data.$loaded().then(function(cardata){
-	    		console.log(cardata.LogBox);
-	    		 
+	    	$scope.userdata = $firebaseObject(ref.child('Users'));
+	    	$scope.userdata.$loaded().then(function(userdata){
+	    		return userdata;	   
 	    	});
 	    });
 
