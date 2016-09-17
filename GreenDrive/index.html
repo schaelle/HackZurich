@@ -19,16 +19,18 @@
 </head>
 
 <body ng-app="GreenDriveApp" ng-cloak layout="column" flex>
-<div ng-controller="NavigationController">
-    <nav class="navbar navbar-default navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <a class="navbar-brand" href="#">GreenDrive</a>
-            </div>
-        </div>
-    </nav>
-
-</div>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<a class="navbar-brand" href="#">GreenDrive</a>
+			</div>
+		</div>
+	</nav>
+	
+	<div class="container">
+    	<div ui-view></div>
+	</div>
+	
 	<!-- build:js dest/output.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -42,7 +44,6 @@
 
     <script src="app/app.js"></script>
     <script src="app/config.js"></script>
-    <script src="app/controller/navigationCtrl.js"></script>
     <script src="app/controller/homeCtrl.js"></script>
     <script src="app/controller/rankingCtrl.js"></script>
     
