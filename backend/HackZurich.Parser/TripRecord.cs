@@ -13,17 +13,9 @@ namespace HackZurich.Parser
 			var distanceRecords = Records.Where(i => i.Distance.HasValue).ToList();
 			if (distanceRecords.Count > 0)
 			{
-				var minDistance = distanceRecords.Min(i => i.Distance.Value);
-				var maxDistance = distanceRecords.Max(i => i.Distance.Value);
-				Distance = maxDistance - minDistance;
-			}
-
-			var fuelRecords = Records.Where(i => i.Fuel.HasValue).ToList();
-			if (fuelRecords.Count > 0)
-			{
-				var min = fuelRecords.Min(i => i.Fuel.Value);
-				var max = fuelRecords.Max(i => i.Fuel.Value);
-				Fuel = max - min;
+				StartDistance = distanceRecords.Min(i => i.Distance.Value);
+				EndDistance = distanceRecords.Max(i => i.Distance.Value);
+				Distance = distanceRecords.Max(i => i.Distance.Value) - distanceRecords.Min(i => i.Distance.Value);
 			}
 		}
 
@@ -31,8 +23,11 @@ namespace HackZurich.Parser
 		public DateTime Start => Records.Min(i => i.Time);
 		public DateTime End => Records.Max(i => i.Time);
 
+		public double StartDistance { get; }
+		public double EndDistance { get; }
+
 		public double Distance { get; }
-		public double Fuel { get; }
+		public double Fuel { get; set; }
 
 		public IReadOnlyList<TripDataRecord> Records { get; }
 	}
