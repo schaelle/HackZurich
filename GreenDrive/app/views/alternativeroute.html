@@ -1,0 +1,43 @@
+<div class="row">
+	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+				
+		<div class="panel panel-default rankingtable">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading"> 
+			  <div ><i class="fa fa-trophy fa-5x"
+							aria-hidden="true"></i></div></div>
+		  
+		
+
+		  <!-- Table -->
+		  <table class="table">
+		  <thead>
+		  	<tr>
+		  		<td>
+		  			Rank
+		  		</td>
+		  		<td>
+		  			User
+		  		</td>
+		  		<td>
+		  			Points
+		  		</td>
+		  	</tr>
+		  </thead>
+		  <tbody>
+			    <tr ng-repeat="item in userdata">
+			    	<td>
+			    	 {{item.Ranking.Rank}}
+					 </td>
+			    	<td>
+						{{item.Name}} {{item.Prename}}
+			    	</td>
+					<td>
+						{{item.Ranking.Points}}
+					</td>
+			    </tr>
+		    </tbody>
+		  </table>
+		</div>
+	</div>
+<div>

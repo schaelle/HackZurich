@@ -1,4 +1,6 @@
 ﻿var app = angular.module('GreenDriveApp',
     ['ui.router',
-    'firebase'
+    'firebase',
+    'highcharts-ng'
     ]);
+

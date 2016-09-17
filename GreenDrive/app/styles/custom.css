@@ -1,3 +1,56 @@
 ﻿body {
 	padding-top: 50px;
 }
+a {
+	text-decoration: none !important;
+}
+.rankingtable{
+	margin: 50px;
+}
+.table > thead > tr > td {
+	padding-left: 15px;
+	padding-right: 15px;
+	font-weight; bold;
+	font-size: 20px;
+}
+
+.rankingtable > .panel-heading{
+	font-size: 22px;
+}
+
+
+/*******************/
+/*Home*/
+/*******************/
+.col-no-padding{
+	padding: 0px;
+}
+.hpanel{
+	padding: 15px;
+	cursor: pointer;
+	
+}
+.text-center > h2 {
+	color: white;
+}
+.home_icon{
+	color: white;
+	text-decoration: none;
+}
+.hpanel_first {
+    background: #ACD1E9;
+}
+
+.hpanel_second {
+    background: #6D929B;
+}
+.hpanel_second:hover, .hpanel_first:hover {
+	background-color: #6D92CB;
+}
+
+.hpanel_second:hover h2,  .hpanel_second:hover .home_icon {
+	color: #c9df8a;
+}
+.hpanel_first:hover h2,  .hpanel_first:hover .home_icon {
+	color: #c9df8a;
+}
