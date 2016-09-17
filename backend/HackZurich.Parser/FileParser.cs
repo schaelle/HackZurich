@@ -127,18 +127,7 @@ namespace HackZurich.Parser
 			return fieldValue;
 		}
 
-		private static void WriteRecords<TData>(string file, IEnumerable<TData> items)
-		{
-			using (var writer = new StreamWriter(new FileStream(file, FileMode.Create, FileAccess.Write)))
-			{
-				var csv = new CsvWriter(writer, new CsvConfiguration { Delimiter = "\t" });
-				csv.WriteHeader<TData>();
-				foreach (var item in items)
-				{
-					csv.WriteRecord(item);
-				}
-			}
-		}
+		
 
 		private static List<Tuple<DateTime, double[]>> MovingAverage(List<Tuple<DateTime, double[]>> fieldValue)
 		{
