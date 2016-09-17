@@ -31,8 +31,7 @@ app.directive('userList', function () {
             // all server changes are applied in realtime
             $scope.userdata = $firebaseArray(ref.child('Users'));
             $scope.userdata.$loaded().then(function () {
-                setUser();
-
+                setUser($stateParams.userId);
             });
 
             $scope.switchUser = function (item) {
