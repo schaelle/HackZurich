@@ -17,17 +17,21 @@
 		  			User
 		  		</td>
 		  		<td>
-		  			Value
+		  			Points
 		  		</td>
 		  	</tr>
 		  </thead>
 		  <tbody>
-			    <tr ng-repeat="data in cardata">
+			    <tr ng-repeat="item in userdata">
 			    	<td>
-			    	
-			    	</td>
+			    	 {{item.Ranking.Rank}}
+					 </td>
 			    	<td>
+						{{item.Name}} {{item.Prename}}
 			    	</td>
+					<td>
+						{{item.Ranking.Points}}
+					</td>
 			    </tr>
 		    </tbody>
 		  </table>
