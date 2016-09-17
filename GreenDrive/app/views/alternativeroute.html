@@ -13,10 +13,16 @@
 				</thead>
 				<tbody>
 					<tr ng-repeat="item in trips">
-						<td align="center">
-							<ui-gmap-google-map center='map.center' zoom='map.zoom'>
-								 <ui-gmap-polyline ng-repeaat="line in trackings" models="line" static="true"></ui-gmap-polylines>
-							</ui-gmap-google-map>
+						<td align="center" width="200" >
+							<ng-map zoom="7" center="{{item.Center}}" map-type-id="TERRAIN">
+						    <shape name="polyline"
+						      path="{{item.Route}}"
+						      geodesic="true"
+						      stroke-color="#FF0000"
+						      stroke-opacity="1.0"
+						      stroke-weight="2">
+						    </shape>
+						  </ng-map>
 						</td>
 						<td class="vert-align">{{item.AvgSpeed | number:0}} km/h</td>
 						<td class="vert-align">{{item.Duration / 60 | number:0}} minutes</td>
