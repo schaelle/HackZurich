@@ -7,7 +7,8 @@
 	    	//$scope.profile = $firebaseObject(ref.child('profiles').child('physicsmarie'));
 	    	$scope.data = $firebaseObject(ref);
 	    	$scope.data.$loaded().then(function(cardata){
-	    		return cardata;	   
+	    		console.log(cardata.LogBox);
+	    		 
 	    	});
 	    });
 
