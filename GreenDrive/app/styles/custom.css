@@ -1,6 +1,7 @@
 ﻿body {
 	padding-top: 50px;
 	font-family: 'Antic', sans-serif !important;
+	background-color: #f1f1f1;
 }
 
 /* navbar */
@@ -29,13 +30,13 @@
 .navbar-default .navbar-nav > .active > a:hover, 
 .navbar-default .navbar-nav > .active > a:focus {
     color: #555;
-    background-color: #E7E7E7;
+    background-color: #34302d;
 }
 .navbar-default .navbar-nav > .open > a, 
 .navbar-default .navbar-nav > .open > a:hover, 
 .navbar-default .navbar-nav > .open > a:focus {
-    color: #555;
-    background-color: #D5D5D5;
+    color: white;
+    background-color: #34302d;
 }
 /* caret */
 .navbar-default .navbar-nav > .dropdown > a .caret {
@@ -55,11 +56,11 @@
 }
 /* mobile version */
 .navbar-default .navbar-toggle {
-    border-color: #DDD;
+    border-color: #34302d;
 }
 .navbar-default .navbar-toggle:hover,
 .navbar-default .navbar-toggle:focus {
-    background-color: #DDD;
+    background-color: #34302d;
 }
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #CCC;
@@ -75,6 +76,11 @@
 }
 
 
+.dropdown-menu > li > a:hover, .dropdown-menu > li > a:focus {
+    color: #262626;
+    text-decoration: none;
+    background-color: #f5f5f5;
+}
 
 ng-map {
 	width:200px; height:200px;
