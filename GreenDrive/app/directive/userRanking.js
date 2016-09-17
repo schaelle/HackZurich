@@ -7,19 +7,19 @@ app.directive('userRanking', function() {
             dialogFunction: "=",
             filterFunction: "="
         },
-        controller: function($scope, $firebaseObject, $firebaseArray) {
+        controller: function($scope, $firebaseObject, $firebaseArray, $state, $stateParams) {
 
-            var ref = firebase.database().ref();
-	    // download physicsmarie's profile data into a local object
-	    // all server changes are applied in realtime
-            
-	    	$scope.userdata = $firebaseArray(ref.child('Users'));
-	    	$scope.userdata.$loaded().then(function(userdata){
-                $scope.currentUser = userdata[0];
-	    		return userdata;	   
-	    	});
+         var ref = firebase.database().ref('Users' + '/' + $stateParams.userId);
+        // download physicsmarie's profile data into a local object
+        // all server changes are applied in realtime
+        $scope.userdata = $firebaseArray(ref);
+        $scope.userdata.$loaded().then(function () {
+            $scope.currentUser = $scope.userdata;
 
-
+        });
+   
+         
+	    		   
         }
     }
 

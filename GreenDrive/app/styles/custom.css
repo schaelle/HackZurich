@@ -3,6 +3,13 @@
 	font-family: 'Antic', sans-serif !important;
 }
 
+.navbar-green {
+}
+
+ul {
+	list-style: none;
+}
+
 .angular-google-map-container { 
   height: 100px;
   width: 150px; 
