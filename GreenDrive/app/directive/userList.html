@@ -1,8 +1,8 @@
-<ul class="nav navbar-nav navbar-right pull-right">
+<ul class="nav navbar-nav navbar-right">
     <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> {{currentUser.Prename}} {{currentUser.Name}} <span class="caret"></a>
+        <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"> <img src="https://api.adorable.io/avatars/12/{{currentUser.Prename}}" class="img-circle xs-b" alt="logo" /> {{currentUser.Prename}} {{currentUser.Name}} <span class="caret"></a>
         <ul class="dropdown-menu">
-            <li ng-repeat="item in userdata"><a ng-click="switchUser(item)"> {{item.Prename}} {{item.Name}}</a></li> 
+            <li ng-repeat="item in userdata"><a ng-click="switchUser(item)"> <img src="https://api.adorable.io/avatars/12/{{item.Prename}}" class="img-circle xs-b" alt="logo"> {{item.Prename}} {{item.Name}}</a></li> 
         </ul>
     </li>
 </ul>
