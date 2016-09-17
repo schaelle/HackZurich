@@ -18,7 +18,7 @@
 		  	</tr>
 		  </thead>
 		  <tbody>
-			    <tr ng-repeat="item in userdata">
+			    <tr ng-repeat="item in userdata | orderBy:['Ranking.Rank']">
 			    	<td align="center">
 			    	 # {{item.Ranking.Rank}}
 					 </td>
