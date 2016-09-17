@@ -18,19 +18,26 @@
 		  	</tr>
 		  </thead>
 		  <tbody>
-			    <tr ng-repeat="item in userdata | orderBy:['Ranking.Rank']">
-			    	<td align="center">
-			    	 # {{item.Ranking.Rank}}
-					 </td>
-			    	<td>
-			    		<img src="https://api.adorable.io/avatars/34/{{item.Prename}}" class="img-circle xs-b" alt="logo">
-			    		
-						{{item.Name}} {{item.Prename}}
-			    	</td>
-					<td>
-						{{item.Ranking.Points}}
-					</td>
-			    </tr>
+					<tr ng-repeat="item in userdata | orderBy:['Ranking.Rank']">
+						<td align="center" ng-if="item.Name !== currentUser[1].$value">
+							# {{item.Ranking.Rank}}
+						</td>
+						<td class="ranking_row" align="center" ng-if="item.Name === currentUser[1].$value">
+							# {{item.Ranking.Rank}}
+						</td>
+						<td ng-if="item.Name !== currentUser[1].$value">
+							<img src="https://api.adorable.io/avatars/34/{{item.Prename}}" class="img-circle xs-b" alt="logo"> {{item.Name}} {{item.Prename}}
+						</td>
+						<td class="ranking_row" ng-if="item.Name === currentUser[1].$value">
+							<img src="https://api.adorable.io/avatars/34/{{item.Prename}}" class="img-circle xs-b" alt="logo"> {{item.Name}} {{item.Prename}}
+						</td>
+						<td ng-if="item.Name != currentUser[1].$value">
+							{{item.Ranking.Points}}
+						</td>
+						<td class="ranking_row" ng-if="item.Name === currentUser[1].$value">
+							{{item.Ranking.Points}}
+						</td>
+					</tr>
 		    </tbody>
 		  </table>
 		</div>

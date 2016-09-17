@@ -83,3 +83,8 @@ tspan{
 .hpanel_third:hover h2,  .hpanel_third:hover .home_icon {
 	color: #c9df8a;
 }
+
+.ranking_row {
+	background-color: #dee4da;
+	font-weight: bold
+}
