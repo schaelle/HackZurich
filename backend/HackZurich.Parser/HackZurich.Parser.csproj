@@ -94,6 +94,7 @@
     <Compile Include="FileParser.cs" />
     <Compile Include="FuelExtractor.cs" />
     <Compile Include="IExtractor.cs" />
+    <Compile Include="PointProducer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProximityDatabase.cs" />
@@ -102,6 +103,7 @@
     <Compile Include="TripExtractor.cs" />
     <Compile Include="TripFieldData.cs" />
     <Compile Include="TripRecord.cs" />
+    <Compile Include="UserPoints.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

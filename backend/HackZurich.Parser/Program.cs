@@ -121,6 +121,8 @@ namespace HackZurich.Parser
 
 					var alternative = await new AlternateTripProducer().ComputeAsync(trip.StartPoint, trip.EndPoint);
 
+					var points = new PointProducer().Compute(trip, alternative);
+
 					var tripData = new TripData
 					{
 						Distance = trip.Distance,
@@ -130,8 +132,10 @@ namespace HackZurich.Parser
 						GasConsumption = trip.Fuel,
 						StartPoint = trip.StartPoint,
 						EndPoint = trip.EndPoint,
-						Alternatives = alternative
-						//Route = trip.Records.Where(a => a.Position != null).Select(a => new[] { a.Position.Latitude, a.Position.Longitude })
+						Alternatives = alternative,
+						Route = string.Join("|", trip.Records.Where(a => a.Position != null).Select(a => a.Position.Latitude + "," + a.Position.Longitude)),
+						AvgSpeed = trip.Records.Where(a => a.Speed.HasValue).Average(a => a.Speed.Value),
+						Points = points
 					};
 
 					if (upload)
@@ -155,8 +159,10 @@ namespace HackZurich.Parser
 			public GeographicPosition EndPoint { get; set; }
 			public IReadOnlyList<AlternateTripProducer.TripDetail> Alternatives { get; set; }
 			public int Duration { get; set; }
+			public string Route { get; set; }
 
-			//public IEnumerable<double[]> Route { get; set; }
+			public double AvgSpeed { get; set; }
+			public UserPoints Points { get; set; }
 		}
 	}
 }

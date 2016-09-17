@@ -10,11 +10,17 @@ namespace HackZurich.Parser
 	{
 		private const string Key = "AIzaSyDzO8mRAp15BNGX4N_7fLNqn81170kCHLM";
 
+		private static readonly Dictionary<string, double> Co2Mode = new Dictionary<string, double>
+		{
+			["driving"] = 150,
+			["bicycling"] = 0,
+			["transit"] = 40,
+			["walking"] = 0,
+		};
+
 		public async Task<IReadOnlyList<TripDetail>> ComputeAsync(GeographicPosition start, GeographicPosition stop)
 		{
-			var modes = new[] { "driving", "bicycling", "transit", "walking" };
-
-			return await Task.WhenAll(modes.Select(mode => LoadAsync(start, stop, mode)));
+			return await Task.WhenAll(Co2Mode.Keys.Select(mode => LoadAsync(start, stop, mode)));
 		}
 
 		private static async Task<TripDetail> LoadAsync(GeographicPosition start, GeographicPosition stop, string mode)
@@ -45,7 +51,8 @@ namespace HackZurich.Parser
 			{
 				Mode = mode,
 				Duration = min.Duration.Value,
-				Distance = min.Distance.Value
+				Distance = min.Distance.Value,
+				Co2 = min.Distance.Value / 1000 * Co2Mode[mode]
 			};
 		}
 
@@ -54,6 +61,7 @@ namespace HackZurich.Parser
 			public string Mode { get; set; }
 			public double Duration { get; set; }
 			public double Distance { get; set; }
+			public double Co2 { get; set; }
 		}
 
 		private class Model
