@@ -2,57 +2,54 @@
 
 <html lang="en">
 <head>
-    <title>Title</title>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=10" />
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, usser-scalable=no, width=device-width" />
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="mobile-web-app-capable" content="yes" />
+<title>Title</title>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=10" />
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, usser-scalable=no, width=device-width" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="mobile-web-app-capable" content="yes" />
 
-    <!--Style Sheets-->
-    <link href="Styles/angular-material.min.css" rel="stylesheet" />
-    <link href="app/styles/custom.css" rel="stylesheet" />
+<!--Style Sheets-->
+<link href="Styles/angular-material.min.css" rel="stylesheet" />
+<link href="app/styles/custom.css" rel="stylesheet" />
 
 </head>
 
 <body ng-app="GreenDriveApp" ng-cloak layout="column" flex>
 
-    <div ng-controller="NavigationController">
+	<div ng-controller="NavigationController"></div>
 
-    </div>
+	<!--start node_modules-->
+	<script src="scripts/angular.js"></script>
+	<script src="scripts/angular-animate.js"></script>
+	<script src="scripts/angular-aria.js"></script>
+	<script src="scripts/angular-messages.js"></script>
+	<script src="scripts/angular-material.js"></script>
+	<script src="scripts/angular-chartjs.js"></script>
+	<script src="scripts/firebase.js"></script>
+	<script src="scripts/angularfire.js"></script>
+	<script src="scripts/angulargrid.js"></script>
+	<script src="scripts/angular-local-storage.js"></script>
+	<script src="scripts/angular-ui-router.js"></script>
+	<script src="scripts/angular-google-analytics.js"></script>
+	<!--end node_modules-->
 
-    <!--start node_modules-->
-    <script src="scripts/angular.js"></script>
-    <script src="scripts/angular-animate.js"></script>
-    <script src="scripts/angular-aria.js"></script>
-    <script src="scripts/angular-messages.js"></script>
-    <script src="scripts/angular-material.js"></script>
-    <script src="scripts/angular-chartjs.js"></script>
-    <script src="scripts/firebase.js"></script>
-    <script src="scripts/angularfire.js"></script>
-    <script src="scripts/angulargrid.js"></script>
-    <script src="scripts/angular-local-storage.js"></script>
-    <script src="scripts/angular-ui-router.js"></script>
-    <script src="scripts/angular-google-analytics.js"></script>
-    <!--end node_modules-->
+	<script src="app/app.js"></script>
+	<script src="app/config.js"></script>
+	<script src="app/controller/navigationCtrl.js"></script>
 
-    <script src="app/app.js"></script>
-    <script src="app/config.js"></script>
-    <script src="app/controller/navigationCtrl.js"></script>
 
-    
-<script src="https://www.gstatic.com/firebasejs/3.4.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyA8Eoavf4aFGNYdNO7XqwnwF9hNvzmeCRw",
-    authDomain: "hackzurich-1ced0.firebaseapp.com",
-    databaseURL: "https://hackzurich-1ced0.firebaseio.com",
-    storageBucket: "hackzurich-1ced0.appspot.com",
-    messagingSenderId: "29004659486"
-  };
-  firebase.initializeApp(config);
-</script>
+	<script>
+		// Initialize Firebase
+		var config = {
+			apiKey : "AIzaSyA8Eoavf4aFGNYdNO7XqwnwF9hNvzmeCRw",
+			authDomain : "hackzurich-1ced0.firebaseapp.com",
+			databaseURL : "https://hackzurich-1ced0.firebaseio.com",
+			storageBucket : "hackzurich-1ced0.appspot.com",
+			messagingSenderId : "29004659486"
+		};
+		firebase.initializeApp(config);
+	</script>
 
 </body>
 
