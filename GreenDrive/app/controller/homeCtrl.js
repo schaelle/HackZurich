@@ -1,6 +1,8 @@
 (function() {
 	app.controller('HomeController', function($scope, $firebaseObject, $firebaseArray,
 			$stateParams) {
+		$scope.emission = 0;
+		$scope.target = 100;
 
 		$scope.userId = $stateParams.userId;
 		var ref = firebase.database().ref();
@@ -48,16 +50,9 @@
 					mileage += car.GasConsumption;
 
 					emission_kg = co2_current_kg_l * mileage;
-
+					$scope.emission = (emission_kg / 1000) * 100;
+					//console.log($scope.emission)
 				});
-
-				console.log("Total Distance: " + distance + ' in km');
-				console.log('Fuel consumption: ' + mileage + "  in l");
-				console.log('CO2 amount: ' + emission_kg / 1000 + 'in t');
-
-				// Test data
-				$scope.emission = (emission_kg / 1000) * 100;
-				$scope.target = 100;
 
 			});
 		});
