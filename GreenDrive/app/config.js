@@ -20,9 +20,22 @@
 		url : "/:userId",
 		templateUrl : "app/views/home.html",
 		controller : "HomeController"
-	})
-	;
+	});
 });
+
+
+app.config(function() {
+	var config = {
+	  apiKey: "AIzaSyA8Eoavf4aFGNYdNO7XqwnwF9hNvzmeCRw",
+	  authDomain: "hackzurich-1ced0.firebaseapp.com",
+	  databaseURL: "https://hackzurich-1ced0.firebaseio.com",
+	  storageBucket: "hackzurich-1ced0.appspot.com",
+	  messagingSenderId: "29004659486"
+	};
+	firebase.initializeApp(config);
+});
+
+
 
 /*
  * app.config(function (localStorageProvider) {

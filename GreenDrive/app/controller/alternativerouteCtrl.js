@@ -2,7 +2,11 @@
 	app.controller("AlternativerouteController", function($scope, $firebaseArray, $firebaseObject, $stateParams) {
 
 		function parseRoute(input){
-			return input.split('|').map(i=>i.split(',').map(a=>parseFloat(a)));
+			return input.split('|').map(function(i){
+				return i.split(',').map(function(c){
+					return parseFloat(c);
+				});
+			});
 		}
 
 		$scope.userId = $stateParams.userId;
